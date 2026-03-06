@@ -31,6 +31,7 @@ phishing-website-detection-ml
 
 ## How to Run
 
+HEAD
 Step 1: Install required libraries
 pip install -r requirements.txt
 
@@ -41,3 +42,13 @@ Step 3: Run prediction
 python predict.py
 
 The model will output whether the URL is **Phishing** or **Legitimate**.
+
+Example Output
+
+Model Accuracy: 1.0
+This URL is predicted as: Phishing
+
+## Purpose
+This project was created as part of academic learning to understand the basics of machine learning model training and prediction using Python.
+
+

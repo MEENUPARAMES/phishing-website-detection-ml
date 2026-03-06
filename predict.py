@@ -2,18 +2,25 @@ import pickle
 import numpy as np
 
 # Load trained model
-with open("model.pkl", "rb") as f:
-    model = pickle.load(f)
+model = pickle.load(open("model.pkl", "rb"))
 
-# Example URL features
-# url_length, num_dots, num_hyphens, has_https
-sample_url = np.array([[90, 4, 2, 0]])
+# Function to extract features from URL
+def extract_features(url):
+    url_length = len(url)
+    num_dots = url.count(".")
+    num_hyphen = url.count("-")
+    https = 1 if url.startswith("https") else 0
+    
+    return [url_length, num_dots, num_hyphen, https]
 
-# Predict
-prediction = model.predict(sample_url)
+# Take URL input from user
+url = input("Enter a URL to check: ")
 
-# Print result
+features = extract_features(url)
+
+prediction = model.predict([features])
+
 if prediction[0] == 1:
-    print("This URL is predicted as: Phishing")
+    print("Result: This URL is PHISHING")
 else:
-    print("This URL is predicted as: Legitimate")
+    print("Result: This URL is LEGITIMATE")
