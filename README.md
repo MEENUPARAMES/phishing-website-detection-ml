@@ -32,16 +32,12 @@ phishing-website-detection-ml
 ## How to Run
 
 Step 1: Install required libraries
-
 pip install -r requirements.txt
 
 Step 2: Train the model
-
 python train_model.py
 
 Step 3: Run prediction
-
 python predict.py
 
 The model will output whether the URL is **Phishing** or **Legitimate**.
-
