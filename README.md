@@ -29,6 +29,19 @@ phishing-website-detection-ml
 2. The trained model is saved as `model.pkl`.
 3. `predict.py` loads the saved model and predicts whether a URL is phishing or legitimate.
 
-## Example
-Run:
+## How to Run
+
+Step 1: Install required libraries
+
+pip install -r requirements.txt
+
+Step 2: Train the model
+
+python train_model.py
+
+Step 3: Run prediction
+
+python predict.py
+
+The model will output whether the URL is **Phishing** or **Legitimate**.
 
